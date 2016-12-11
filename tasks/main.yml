@@ -1,0 +1,10 @@
+---
+- name:   Install repo
+  yum:    name=http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+          state=present
+  when:   'ansible_distribution == "CentOS" and ansible_distribution_major_version=="6"'
+
+- name:   Install repo
+  yum:    name=https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+          state=present
+  when:   'ansible_distribution == "CentOS" and ansible_distribution_major_version=="7"'
